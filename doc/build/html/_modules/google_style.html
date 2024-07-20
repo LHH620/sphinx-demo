@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>google_style &mdash; sphinx demo 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5a0213dc"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../_static/translations.js?v=beaddf03"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="../_static/design-tabs.js?v=f930bc37"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            sphinx demo
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目录:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../welcome.html">Sphinx构建文档的使用方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../google_style.html">google_style module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils.html">utils package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run.html">代码练兵场</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter/chapter01.html">第一章：如何正确使用一个工具？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chapter/chapter02.html">第二章：使用工具的辩证性思考</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">sphinx demo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">模块代码</a></li>
+      <li class="breadcrumb-item active">google_style</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>google_style 源代码</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&#39;&#39;&#39;Google注释风格</span>
+
+<span class="sd">详情见 `Google注释风格指南`_</span>
+
+<span class="sd">.. _Google注释风格指南:</span>
+<span class="sd">   https://google.github.io/styleguide/pyguide.html</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+<div class="viewcode-block" id="GoogleStyle">
+<a class="viewcode-back" href="../google_style.html#google_style.GoogleStyle">[文档]</a>
+<span class="k">class</span> <span class="nc">GoogleStyle</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Google注释风格</span>
+
+<span class="sd">    用 ``缩进`` 分隔，</span>
+<span class="sd">    适用于倾向水平，短而简单的文档</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        dividend (int or float): 被除数</span>
+<span class="sd">        name (:obj:`str`, optional): 该类的命名</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+<div class="viewcode-block" id="GoogleStyle.__init__">
+<a class="viewcode-back" href="../google_style.html#google_style.GoogleStyle.__init__">[文档]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dividend</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s1">&#39;GoogleStyle&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;初始化&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dividend</span> <span class="o">=</span> <span class="n">dividend</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span></div>
+
+
+<div class="viewcode-block" id="GoogleStyle.divide">
+<a class="viewcode-back" href="../google_style.html#google_style.GoogleStyle.divide">[文档]</a>
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;除法</span>
+
+<span class="sd">        Google注释风格的函数，</span>
+<span class="sd">        类型主要有Args、Returns、Raises、Examples</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            divisor (int):除数</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            除法结果</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ZeroDivisionError: division by zero</span>
+
+<span class="sd">        Examples:</span>
+<span class="sd">            &gt;&gt;&gt; google = GoogleStyle(divisor=10)</span>
+<span class="sd">            &gt;&gt;&gt; google.divide(10)</span>
+<span class="sd">            1.0</span>
+
+<span class="sd">        References:</span>
+<span class="sd">            除法_百度百科  https://baike.baidu.com/item/%E9%99%A4%E6%B3%95/6280598</span>
+<span class="sd">            </span>
+<span class="sd">        More:</span>
+<span class="sd">            回到主页：:doc:`index`  </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dividend</span> <span class="o">/</span> <span class="n">divisor</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">e</span></div>
+</div>
+
+
+<div class="viewcode-block" id="test_function">
+<a class="viewcode-back" href="../google_style.html#google_style.test_function">[文档]</a>
+<span class="k">def</span> <span class="nf">test_function</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the submodule given by ``target`` if it exists, otherwise throw an error.</span>
+
+<span class="sd">        For example, let&#39;s say you have an ``nn.Module`` ``A`` that</span>
+<span class="sd">        looks like this:</span>
+
+<span class="sd">        .. code-block:: text</span>
+
+<span class="sd">            A(</span>
+<span class="sd">                (net_b): Module(</span>
+<span class="sd">                    (net_c): Module(</span>
+<span class="sd">                        (conv): Conv2d(16, 33, kernel_size=(3, 3), stride=(2, 2))</span>
+<span class="sd">                    )</span>
+<span class="sd">                    (linear): Linear(in_features=100, out_features=200, bias=True)</span>
+<span class="sd">                )</span>
+<span class="sd">            )</span>
+<span class="sd">        </span>
+<span class="sd">        .. note::</span>
+<span class="sd">            This method modifies the module in-place.</span>
+<span class="sd">        </span>
+<span class="sd">        (The diagram shows an ``nn.Module`` ``A``. ``A`` has a nested</span>
+<span class="sd">        submodule ``net_b``, which itself has two submodules ``net_c``</span>
+<span class="sd">        and ``linear``. ``net_c`` then has a submodule ``conv``.)</span>
+
+<span class="sd">        To check whether or not we have the ``linear`` submodule, we</span>
+<span class="sd">        would call ``get_submodule(&quot;net_b.linear&quot;)``. To check whether</span>
+<span class="sd">        we have the ``conv`` submodule, we would call</span>
+<span class="sd">        ``get_submodule(&quot;net_b.net_c.conv&quot;)``.</span>
+
+<span class="sd">        The runtime of ``get_submodule`` is bounded by the degree</span>
+<span class="sd">        of module nesting in ``target``. A query against</span>
+<span class="sd">        ``named_modules`` achieves the same result, but it is O(N) in</span>
+<span class="sd">        the number of transitive modules. So, for a simple check to see</span>
+<span class="sd">        if some submodule exists, ``get_submodule`` should always be</span>
+<span class="sd">        used.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            target: The fully-qualified string name of the submodule</span>
+<span class="sd">                to look for. (See above example for how to specify a</span>
+<span class="sd">                fully-qualified string.)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            torch.nn.Module: The submodule referenced by ``target``</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            AttributeError: If the target string references an invalid</span>
+<span class="sd">                path or resolves to something that is not an</span>
+<span class="sd">                ``nn.Module``</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+        
+<div class="viewcode-block" id="complicated_function">
+<a class="viewcode-back" href="../google_style.html#google_style.complicated_function">[文档]</a>
+<span class="k">def</span> <span class="nf">complicated_function</span><span class="p">():</span> 
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Move and/or cast the parameters and buffers.</span>
+
+<span class="sd">        This can be called as</span>
+
+<span class="sd">        .. function:: to(device=None, dtype=None, non_blocking=False)</span>
+<span class="sd">           :noindex:</span>
+
+<span class="sd">        .. function:: to(dtype, non_blocking=False)</span>
+<span class="sd">           :noindex:</span>
+
+<span class="sd">        .. function:: to(tensor, non_blocking=False)</span>
+<span class="sd">           :noindex:</span>
+
+<span class="sd">        .. function:: to(memory_format=torch.channels_last)</span>
+<span class="sd">           :noindex:</span>
+
+<span class="sd">        Its signature is similar to :meth:`torch.Tensor.to`, but only accepts</span>
+<span class="sd">        floating point or complex :attr:`dtype`\ s. In addition, this method will</span>
+<span class="sd">        only cast the floating point or complex parameters and buffers to :attr:`dtype`</span>
+<span class="sd">        (if given). The integral parameters and buffers will be moved</span>
+<span class="sd">        :attr:`device`, if that is given, but with dtypes unchanged. When</span>
+<span class="sd">        :attr:`non_blocking` is set, it tries to convert/move asynchronously</span>
+<span class="sd">        with respect to the host if possible, e.g., moving CPU Tensors with</span>
+<span class="sd">        pinned memory to CUDA devices.</span>
+
+<span class="sd">        See below for examples.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            This method modifies the module in-place.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            device (:class:`torch.device`): the desired device of the parameters</span>
+<span class="sd">                and buffers in this module</span>
+<span class="sd">            dtype (:class:`torch.dtype`): the desired floating point or complex dtype of</span>
+<span class="sd">                the parameters and buffers in this module</span>
+<span class="sd">            tensor (torch.Tensor): Tensor whose dtype and device are the desired</span>
+<span class="sd">                dtype and device for all parameters and buffers in this module</span>
+<span class="sd">            memory_format (:class:`torch.memory_format`): the desired memory</span>
+<span class="sd">                format for 4D parameters and buffers in this module (keyword</span>
+<span class="sd">                only argument)</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Module: self</span>
+
+<span class="sd">        Examples::</span>
+
+<span class="sd">            &gt;&gt;&gt; # xdoctest: +IGNORE_WANT(&quot;non-deterministic&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; linear = nn.Linear(2, 2)</span>
+<span class="sd">            &gt;&gt;&gt; linear.weight</span>
+<span class="sd">            Parameter containing:</span>
+<span class="sd">            tensor([[ 0.1913, -0.3420],</span>
+<span class="sd">                    [-0.5113, -0.2325]])</span>
+<span class="sd">            &gt;&gt;&gt; linear.to(torch.double)</span>
+<span class="sd">            Linear(in_features=2, out_features=2, bias=True)</span>
+<span class="sd">            &gt;&gt;&gt; linear.weight</span>
+<span class="sd">            Parameter containing:</span>
+<span class="sd">            tensor([[ 0.1913, -0.3420],</span>
+<span class="sd">                    [-0.5113, -0.2325]], dtype=torch.float64)</span>
+<span class="sd">            &gt;&gt;&gt; # xdoctest: +REQUIRES(env:TORCH_DOCTEST_CUDA1)</span>
+<span class="sd">            &gt;&gt;&gt; gpu1 = torch.device(&quot;cuda:1&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; linear.to(gpu1, dtype=torch.half, non_blocking=True)</span>
+<span class="sd">            Linear(in_features=2, out_features=2, bias=True)</span>
+<span class="sd">            &gt;&gt;&gt; linear.weight</span>
+<span class="sd">            Parameter containing:</span>
+<span class="sd">            tensor([[ 0.1914, -0.3420],</span>
+<span class="sd">                    [-0.5112, -0.2324]], dtype=torch.float16, device=&#39;cuda:1&#39;)</span>
+<span class="sd">            &gt;&gt;&gt; cpu = torch.device(&quot;cpu&quot;)</span>
+<span class="sd">            &gt;&gt;&gt; linear.to(cpu)</span>
+<span class="sd">            Linear(in_features=2, out_features=2, bias=True)</span>
+<span class="sd">            &gt;&gt;&gt; linear.weight</span>
+<span class="sd">            Parameter containing:</span>
+<span class="sd">            tensor([[ 0.1914, -0.3420],</span>
+<span class="sd">                    [-0.5112, -0.2324]], dtype=torch.float16)</span>
+
+<span class="sd">            &gt;&gt;&gt; linear = nn.Linear(2, 2, bias=None).to(torch.cdouble)</span>
+<span class="sd">            &gt;&gt;&gt; linear.weight</span>
+<span class="sd">            Parameter containing:</span>
+<span class="sd">            tensor([[ 0.3741+0.j,  0.2382+0.j],</span>
+<span class="sd">                    [ 0.5593+0.j, -0.4443+0.j]], dtype=torch.complex128)</span>
+<span class="sd">            &gt;&gt;&gt; linear(torch.ones(3, 2, dtype=torch.cdouble))</span>
+<span class="sd">            tensor([[0.6122+0.j, 0.1150+0.j],</span>
+<span class="sd">                    [0.6122+0.j, 0.1150+0.j],</span>
+<span class="sd">                    [0.6122+0.j, 0.1150+0.j]], dtype=torch.complex128)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, Mobius。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXX-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

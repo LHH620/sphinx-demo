@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sphinx构建文档的使用方法 &mdash; sphinx demo 0.0.1 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5a0213dc"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="_static/translations.js?v=beaddf03"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="_static/design-tabs.js?v=f930bc37"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="google_style module" href="google_style.html" />
+    <link rel="prev" title="sphinx demo documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            sphinx demo
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目录:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx构建文档的使用方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">数学符号和公式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathjax">使用mathjax构建公式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">使用标签构建公式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">使用$符号构建公式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#latex">使用Latex语法构建公式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">表格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">图片</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">网络图片</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">本地图片</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#html">使用html语法的图片</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">交叉引用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">文档内部跳转</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">跨文档跳转</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">一些特殊的块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">任务列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">特殊功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">使文档更具有设计感</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">效果展示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="google_style.html">google_style module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">代码练兵场</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter/chapter01.html">第一章：如何正确使用一个工具？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter/chapter02.html">第二章：使用工具的辩证性思考</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sphinx demo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Sphinx构建文档的使用方法</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/welcome.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="sphinx">
+<h1>Sphinx构建文档的使用方法<a class="headerlink" href="#sphinx" title="Link to this heading"></a></h1>
+<blockquote>
+<div><p>这里是一段引用，用来简要介绍或者说明这个文档的用途，同时也可以引用相关的内容。</p>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<ul class="simple">
+<li><p>下面的部分内容需要安装对应的插件和开启扩展才可以实现，部分插件和扩展可能在部分主题上显示存在些许问题，所以请以<strong>实际效果</strong>为准。</p></li>
+</ul>
+</div>
+<section id="id1">
+<h2>数学符号和公式<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>开启公式显示和解析需要到<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>文件中开启<code class="docutils literal notranslate"><span class="pre">extensions</span></code>中的<code class="docutils literal notranslate"><span class="pre">sphinx.ext.mathjax</span></code>插件。</p>
+<section id="mathjax">
+<h3>使用mathjax构建公式<a class="headerlink" href="#mathjax" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>这是一个开普勒第三定律的公式：<span class="math notranslate nohighlight">\(a^3 = p^2\)</span>
+其中 <span class="math notranslate nohighlight">\(a\)</span> 是半长轴，<span class="math notranslate nohighlight">\(p\)</span> 是周期。</p></li>
+<li><p>这是爱因斯坦质能方程：<span class="math notranslate nohighlight">\(E = mc^2\)</span>,
+其中 <span class="math notranslate nohighlight">\(E\)</span> 是能量，<span class="math notranslate nohighlight">\(m\)</span> 是质量，<span class="math notranslate nohighlight">\(c\)</span> 是光速。</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>使用标签构建公式<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Since Pythagoras, we know that <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-mymath">
+<span class="eqno">(1)<a class="headerlink" href="#equation-mymath" title="Link to this equation"></a></span>\[ \begin{align}\begin{aligned}(a + b)^2 = a^2 + 2ab + b^2\\\begin{split}(a + b)^2  &amp;=  (a + b)(a + b) \\
+           &amp;=  a^2 + 2ab + b^2\end{split}\end{aligned}\end{align} \]</div>
+<p>添加了label的公式， <a class="reference internal" href="#equation-mymath">(1)</a> is a quadratic equation.</p>
+</section>
+<section id="id3">
+<h3>使用$符号构建公式<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="math notranslate nohighlight" id="equation-mymath2">
+<span class="eqno">(2)<a class="headerlink" href="#equation-mymath2" title="Link to this equation"></a></span>\[\begin{split}
+(a + b)^2  &amp;=  (a + b)(a + b) \\
+           &amp;=  a^2 + 2ab + b^2
+\end{split}\]</div>
+<p>The equation <a class="reference internal" href="#equation-mymath2">(2)</a> is also a quadratic equation.</p>
+<p>Hence, for <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span>,
+<div class="math notranslate nohighlight">
+\[
+  \mathbb P (\alpha \bar{X} \ge \mu) \le \alpha;
+\]</div>
+
+i.e., <span class="math notranslate nohighlight">\([\alpha \bar{X}, \infty)\)</span> is a lower 1-sided <span class="math notranslate nohighlight">\(1-\alpha\)</span> confidence bound for <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+</section>
+<section id="latex">
+<h3>使用Latex语法构建公式<a class="headerlink" href="#latex" title="Link to this heading"></a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gather*}
+a_1=b_1+c_1\\
+a_2=b_2+c_2-d_2+e_2
+\end{gather*}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+a_{11}&amp; =b_{11}&amp;
+  a_{12}&amp; =b_{12}\\
+a_{21}&amp; =b_{21}&amp;
+  a_{22}&amp; =b_{22}+c_{22}
+\end{align}
+\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<ul class="simple">
+<li><p>当我们在这个文档里面使用Latex语法的时候，虽然可以不用将公式包裹在$符号之内，但为了保持兼容性，我们还是保留这个符号，符合约定俗成的规定。</p></li>
+<li><p>支持的latex环境有以下几种：equation, multline, gather, align, alignat, flalign, matrix, pmatrix, bmatrix, Bmatrix, vmatrix, Vmatrix, eqnarray.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>代码<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>支持代码高亮</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GoogleStyle</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Google注释风格</span>
+
+<span class="sd">    用 ``缩进`` 分隔，</span>
+<span class="sd">    适用于倾向水平，短而简单的文档</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        dividend (int or float): 被除数</span>
+<span class="sd">        name (:obj:`str`, optional): 该类的命名</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dividend</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;GoogleStyle&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;初始化&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dividend</span> <span class="o">=</span> <span class="n">dividend</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;除法</span>
+
+<span class="sd">        Google注释风格的函数，</span>
+<span class="sd">        类型主要有Args、Returns、Raises、Examples</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            divisor (int):除数</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            除法结果</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ZeroDivisionError: division by zero</span>
+
+<span class="sd">        Examples:</span>
+<span class="sd">            &gt;&gt;&gt; google = GoogleStyle(divisor=10)</span>
+<span class="sd">            &gt;&gt;&gt; google.divide(10)</span>
+<span class="sd">            1.0</span>
+
+<span class="sd">        References:</span>
+<span class="sd">            除法_百度百科  https://baike.baidu.com/item/%E9%99%A4%E6%B3%95/6280598</span>
+<span class="sd">            </span>
+<span class="sd">        More:</span>
+<span class="sd">            回到主页：:doc:`index`  </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dividend</span> <span class="o">/</span> <span class="n">divisor</span>
+        <span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">e</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>表格<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>表格可以添加标题</p>
+</div></blockquote>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-text">表格标题</span><a class="headerlink" href="#id17" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Syntax</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-right"><p>Test Text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Header</p></td>
+<td class="text-center"><p>Title</p></td>
+<td class="text-right"><p>Here’s this</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Paragraph</p></td>
+<td class="text-center"><p>Text</p></td>
+<td class="text-right"><p>And more</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id6">
+<h2>图片<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>网络图片<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>语法：</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">alt text</span>](<span class="na">https://www.python.org/static/community_logos/python-logo-master-v3-TM.png &quot;Python logo&quot;</span>)
+</pre></div>
+</div>
+<p>显示效果</p>
+<p><img alt="alt text" src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" /></p>
+</section>
+<section id="id8">
+<h3>本地图片<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>语法：</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>![<span class="nt">alt text</span>](<span class="na">_static/logo.png</span>)
+</pre></div>
+</div>
+<p>显示效果
+<img alt="alt text" src="_images/logo.png" /></p>
+</section>
+<section id="html">
+<h3>使用html语法的图片<a class="headerlink" href="#html" title="Link to this heading"></a></h3>
+<p>语法：</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;_static/logo.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;alt text&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;200&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>显示效果：
+<a class="reference internal" href="_images/logo.png"><img alt="alt text" src="_images/logo.png" style="width: 400px; height: 200px;" /></a></p>
+</section>
+</section>
+<section id="id9">
+<h2>交叉引用<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>交叉引用是文档中非常重要的一部分，它可以帮助读者快速找到相关的内容。</p>
+</div></blockquote>
+<p>交叉引用主要用于引用文档中的其他部分，包括标题、图片、表格、代码块等。</p>
+<p>为了实现这个效果，首先需要在文档中的适当位置设置一些锚点，然后在其他地方引用这些锚点。</p>
+<p>创建锚点主要有三种方法：</p>
+<ol class="arabic simple">
+<li><p>用<code class="docutils literal notranslate"><span class="pre">(target)=</span></code>注释语法块</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">{#id}</span></code>属性注释语法（需要开启<code class="docutils literal notranslate"><span class="pre">attrs_block</span></code>和<code class="docutils literal notranslate"><span class="pre">attrs_inline</span></code>扩展）</p></li>
+<li><p>直接为指令添加<code class="docutils literal notranslate"><span class="pre">name</span></code>属性</p></li>
+</ol>
+<div class="admonition attention">
+<p class="admonition-title">注意</p>
+<p>为了实现<code class="docutils literal notranslate"><span class="pre">id</span></code>的锚点跳转功能，需要到<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>中的<code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span></code>开启<code class="docutils literal notranslate"><span class="pre">attrs_block</span></code>和<code class="docutils literal notranslate"><span class="pre">attrs_inline</span></code>扩展。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s2">&quot;attrs_inline&quot;</span><span class="p">,</span> <span class="c1"># 行内属性</span>
+    <span class="s2">&quot;attrs_block&quot;</span><span class="p">,</span> <span class="c1"># 属性块</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<section id="id10">
+<h3>文档内部跳转<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<section id="heading">
+<span id="heading-target"></span><h4>Heading<a class="headerlink" href="#heading" title="Link to this heading"></a></h4>
+<p id="paragraph-target">This is a paragraph, with an <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute.</p>
+<p>This is a <span id="span-target">span with an <code class="docutils literal notranslate"><span class="pre">id</span></code> attribute</span>.</p>
+<div class="admonition note" id="directive-target">
+<p class="admonition-title">备注</p>
+<p>这是一个添加了  <code class="docutils literal notranslate"><span class="pre">name</span></code> 属性的段落。</p>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="#heading-target">reference1</a></p></li>
+<li><p><a class="reference internal" href="#paragraph-target">reference2</a></p></li>
+<li><p><a class="reference internal" href="#span-target">reference3</a></p></li>
+<li><p><a class="reference internal" href="#directive-target">reference4</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id11">
+<h3>跨文档跳转<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>跳转到另一个文档：<a class="reference internal" href="utils.html"><span class="std std-doc">点击这里</span></a></p>
+</section>
+</section>
+<section id="id12">
+<h2>一些特殊的块<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<blockquote>
+<div><p>这些特殊的块以一种更加美观突出的方式展现，可以使得文档的内容更加丰富。</p>
+</div></blockquote>
+<div class="admonition danger">
+<p class="admonition-title">危险</p>
+<p>这是一个危险块。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>这是一个警告块。</p>
+</div>
+<div class="admonition error">
+<p class="admonition-title">错误</p>
+<p>this is a block</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
+<p>this is a block</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<p>this is a block</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>这是一个提示快</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">小心</p>
+<p>这里是一个警告内容</p>
+</div>
+<p>自定义一个块</p>
+<div class="tip admonition">
+<p class="admonition-title">My custom title with <em>Markdown</em>!</p>
+<p>This is a custom title for a tip admonition.</p>
+</div>
+</section>
+<section id="id13">
+<h2>任务列表<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> An item that needs doing</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> An item that is complete</p></li>
+</ul>
+</section>
+<section id="id14">
+<h2>特殊功能<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<div class="dropdown admonition">
+<p class="admonition-title">点击标题展开和折叠</p>
+<p>This title was made into a dropdown admonition by adding <code class="docutils literal notranslate"><span class="pre">:class:</span> <span class="pre">dropdown</span></code> to it.</p>
+</div>
+<div class="toggle docutils container">
+<p>这是一个具有翻转功能的块，你可以点击用来查看或者隐藏！</p>
+</div>
+</section>
+<section id="id15">
+<h2>使文档更具有设计感<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<p>只需要安装<code class="docutils literal notranslate"><span class="pre">sphinx-design</span></code>即可实现。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-design
+</pre></div>
+</div>
+<p>然后在<code class="docutils literal notranslate"><span class="pre">conf.py</span></code>里面开启扩展</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;sphinx_design&quot;</span><span class="p">,</span>
+    <span class="c1"># other extensions</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="id16">
+<h3>效果展示<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>卡片</p></li>
+<li><p>标签页</p></li>
+</ul>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Sphinx demo</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+卡片标题</div>
+<p class="sd-card-text">这是一个使用 <code class="docutils literal notranslate"><span class="pre">sphinx-design</span></code> 的卡片，可以更好地展示具有卡片形式的内容。</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text">感兴趣的话可以支持一下！</p>
+</div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+唐诗</label><div class="sd-tab-content docutils">
+<p>白日依山尽，黄河入海流。
+欲穷千里目，更上一层楼。</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+宋词</label><div class="sd-tab-content docutils">
+<p>众里寻他千百度，蓦然回首，那人却在灯火阑珊处。</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="sphinx demo documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="google_style.html" class="btn btn-neutral float-right" title="google_style module" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, Mobius。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-XXXXXXX-1', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>
